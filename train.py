@@ -60,8 +60,12 @@ callbacks = [EarlyStopping(patience=2, monitor='val)loss')]
 model.compile(loss='categorical_crossentropy', optimizer=optimizer, metrics=[categorical_accuracy])
 model.summary()
 
-filepath = "weights-improvement-{epoch:02d}-{loss:.4f}-bigger.hdf5"
-callbacks = [EarlyStopping(patience=4, monitor='val_loss'), ModelCheckpoint(filepath, monitor='loss', verbose=1, save_best_only=True, mode='min')]
+# fit the model
+filepath = "{epoch:02d}-loss-{loss:.4f}.hdf5"
+checkpoint = ModelCheckpoint(filepath, monitor='loss', verbose=1, save_best_only=True, mode='min')
+callbacks_list = [checkpoint]
+
+#callbacks = [EarlyStopping(patience=4, monitor='val_loss'), ModelCheckpoint(filepath, monitor='loss', verbose=1, save_best_only=True, mode='min')]
 
 # fit the model
 model.fit(X, y, batch_size=64, shuffle=True, epochs=2, callbacks=callbacks, validation_split=0.1)
