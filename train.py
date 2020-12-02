@@ -52,6 +52,8 @@ model = Sequential()
 # size of rnn = 256 --> this doesnt really matter but tends to stay in the 200-300 range
 model.add(Bidirectional(LSTM(256, activation="relu"), input_shape=(X.shape[1], X.shape[2])))
 model.add(Dropout(0.2))
+model.add(Bidirectional(LSTM(256)))
+model.add(Dropout(0.2))
 model.add(Dense(y.shape[1], activation='softmax'))
 callbacks = [EarlyStopping(patience=2, monitor='val)loss')]
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=[categorical_accuracy])
@@ -66,6 +68,6 @@ callbacks_list = [checkpoint]
 # callbacks = [EarlyStopping(patience=4, monitor='val_loss'), ModelCheckpoint(filepath, monitor='loss', verbose=1, save_best_only=True, mode='min')]
 
 # fit the model
-model.fit(X, y, batch_size=64, shuffle=True, epochs=2, callbacks=callbacks_list, validation_split=0.1)
+model.fit(X, y, batch_size=64, shuffle=True, epochs=1, callbacks=callbacks_list, validation_split=0.1)
 
 print("Move on to write.py")
