@@ -53,21 +53,19 @@ model = Sequential()
 model.add(Bidirectional(LSTM(256, activation="relu"), input_shape=(X.shape[1], X.shape[2])))
 model.add(Dropout(0.2))
 model.add(Dense(y.shape[1], activation='softmax'))
-model.add(Activation('softmax'))
-# learning rate = 0.001
-optimizer = Adam(lr=0.001)
 callbacks = [EarlyStopping(patience=2, monitor='val)loss')]
-model.compile(loss='categorical_crossentropy', optimizer=optimizer, metrics=[categorical_accuracy])
-model.summary()
+model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=[categorical_accuracy])
 
 # fit the model
 filepath = "{epoch:02d}-loss-{loss:.4f}.hdf5"
 checkpoint = ModelCheckpoint(filepath, monitor='loss', verbose=1, save_best_only=True, mode='min')
 callbacks_list = [checkpoint]
 
-#callbacks = [EarlyStopping(patience=4, monitor='val_loss'), ModelCheckpoint(filepath, monitor='loss', verbose=1, save_best_only=True, mode='min')]
+# model.fit(X, y, epochs=50, batch_size=64, callbacks=callbacks_list)
+
+# callbacks = [EarlyStopping(patience=4, monitor='val_loss'), ModelCheckpoint(filepath, monitor='loss', verbose=1, save_best_only=True, mode='min')]
 
 # fit the model
-model.fit(X, y, batch_size=64, shuffle=True, epochs=2, callbacks=callbacks, validation_split=0.1)
+model.fit(X, y, batch_size=64, shuffle=True, epochs=2, callbacks=callbacks_list, validation_split=0.1)
 
 print("Move on to write.py")
