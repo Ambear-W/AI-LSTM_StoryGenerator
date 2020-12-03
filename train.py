@@ -27,7 +27,8 @@ print("Total Characters: ", n_chars)
 print("Total Vocab: ", n_vocab)
 
 # prepare the dataset of input to output pairs encoded as integers
-seqLength = 100
+# seqlength = 100
+seqLength = 50
 dataX = []
 dataY = []
 for i in range(0, n_chars - seqLength, 1):
@@ -50,16 +51,14 @@ y = np_utils.to_categorical(dataY)
 # define the LSTM --> this makes it so that way we can get the testing done to start writing up our stories!
 model = Sequential()
 # size of rnn = 256 --> this doesnt really matter but tends to stay in the 200-300 range
-model.add(Bidirectional(LSTM(256, activation="relu"), input_shape=(X.shape[1], X.shape[2])))
-model.add(Dropout(0.2))
-model.add(Bidirectional(LSTM(256)))
-model.add(Dropout(0.2))
+model.add(Bidirectional(LSTM(200, return_sequences=True, activation="relu"), input_shape=(X.shape[1], X.shape[2])))
+model.add(Bidirectional(LSTM(200)))
 model.add(Dense(y.shape[1], activation='softmax'))
 callbacks = [EarlyStopping(patience=2, monitor='val)loss')]
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=[categorical_accuracy])
 
 # fit the model
-filepath = "{epoch:02d}-loss-{loss:.4f}.hdf5"
+filepath = "epoch-{epoch:02d}-loss-{loss:.4f}.hdf5"
 checkpoint = ModelCheckpoint(filepath, monitor='loss', verbose=1, save_best_only=True, mode='min')
 callbacks_list = [checkpoint]
 
