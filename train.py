@@ -3,17 +3,15 @@
 # Larger LSTM Network
 import numpy
 from keras.models import Sequential
-from keras.layers import Dense, Dropout, Activation
+from keras.layers import Dense
 from keras.layers import LSTM, Bidirectional
 from keras.callbacks import ModelCheckpoint
 from keras.utils import np_utils
-from keras.optimizers import Adam
 from keras.callbacks import EarlyStopping
 from keras.metrics import categorical_accuracy
 
 # load data/text and makes all lower case --> making your data lowercase
 # helps reduce the time that it takes to train your code
-
 rawText = open("storyData.txt", 'r', encoding='utf-8').read()
 rawText = rawText.lower()
 
@@ -27,7 +25,6 @@ print("Total Characters: ", n_chars)
 print("Total Vocab: ", n_vocab)
 
 # prepare the dataset of input to output pairs encoded as integers
-# seqLength = 100
 seqLength = 50
 dataX = []
 dataY = []
@@ -50,7 +47,7 @@ y = np_utils.to_categorical(dataY)
 
 # define the LSTM --> this makes it so that way we can get the testing done to start writing up our stories!
 model = Sequential()
-# size of rnn = 256 --> this doesnt really matter but tends to stay in the 200-300 range
+# size of rnn = 256 --> tends to stay in the 200-300 range
 model.add(Bidirectional(LSTM(256, return_sequences=True, activation="relu"), input_shape=(X.shape[1], X.shape[2])))
 model.add(Bidirectional(LSTM(256)))
 model.add(Dense(y.shape[1], activation='softmax'))
@@ -63,7 +60,8 @@ checkpoint = ModelCheckpoint(filepath, monitor='loss', verbose=1, save_best_only
 callbacks_list = [checkpoint]
 
 # fit the model
-# Batch_size --> this is a number that is more than or equal to one and less than or equal to the number of samples int he training data set
-model.fit(X, y, batch_size=64, shuffle=True, epochs=20, callbacks=callbacks_list, validation_split=0.1)
+# Batch_size --> this is a number that is more than or equal to one and less than or equal to the number of samples in the training data set
+# epochs --> the best way to describe it is the number of tests it does during the run...the industry standard tends to be around 30 but the more you do the better the data
+model.fit(X, y, batch_size=64, shuffle=True, epochs=30, callbacks=callbacks_list, validation_split=0.1)
 
 print("Move on to write.py")

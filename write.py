@@ -2,17 +2,13 @@ import numpy
 import sys
 from keras.models import Sequential
 from keras.layers import Dense
-# Dropout, Activation
 from keras.layers import LSTM, Bidirectional
-# from keras.callbacks import ModelCheckpoint
 from keras.utils import np_utils
-# from keras.optimizers import Adam
 from keras.callbacks import EarlyStopping
 from keras.metrics import categorical_accuracy
 
 # load data/text and makes all lower case --> making your data lowercase
 # helps reduce the time that it takes to train your code
-
 rawText = open("storyData.txt", 'r', encoding='utf-8').read()
 rawText = rawText.lower()
 
