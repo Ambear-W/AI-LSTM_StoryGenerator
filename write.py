@@ -45,7 +45,7 @@ y = np_utils.to_categorical(dataY)
 
 # define the LSTM --> this makes it so that way we can get the testing done to start writing up our stories!
 model = Sequential()
-# size of rnn = 256 --> this doesnt really matter but tends to stay in the 200-300 range
+# size of rnn = 256 --> tends to stay in the 200-300 range
 model.add(Bidirectional(LSTM(256, return_sequences=True, activation="relu"), input_shape=(X.shape[1], X.shape[2])))
 model.add(Bidirectional(LSTM(256)))
 model.add(Dense(y.shape[1], activation='softmax'))
@@ -55,7 +55,7 @@ model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=[catego
 filename = "epoch-16-loss-1.2612.hdf5"
 model.load_weights(filename)
 model.compile(loss='categorical_crossentropy', optimizer='adam')
-# pick a random seed
+# pick a random seed which the AI will use to generate the next sentences of text
 start = numpy.random.randint(0, len(dataX)-1)
 pattern = dataX[start]
 print("Seed:")
