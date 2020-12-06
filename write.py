@@ -67,9 +67,10 @@ print("\"", ''.join([charDictionaryInt[value] for value in pattern]), "\"")
 
 
 # this prevents the AI from causing the story to repeat itself as well as how predictable the text will be
+# however the lower the temperature the more likely it will be to repeat itself
 # the higher the temperature the less predictable the outcome will be --> this means that spelling/grammar errors could be more common
 # the lower the temperature the more predictable the outcome will be
-def sample(preds, temperature=0.2):
+def sample(preds, temperature=0.35):
 	preds = numpy.asarray(preds).astype('float64')
 	numpy.seterr(divide='ignore')
 	preds = numpy.log(preds) / temperature
