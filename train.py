@@ -27,7 +27,7 @@ print("Total Characters: ", n_chars)
 print("Total Vocab: ", n_vocab)
 
 # prepare the dataset of input to output pairs encoded as integers
-# seqlength = 100
+# seqLength = 100
 seqLength = 50
 dataX = []
 dataY = []
@@ -51,8 +51,8 @@ y = np_utils.to_categorical(dataY)
 # define the LSTM --> this makes it so that way we can get the testing done to start writing up our stories!
 model = Sequential()
 # size of rnn = 256 --> this doesnt really matter but tends to stay in the 200-300 range
-model.add(Bidirectional(LSTM(200, return_sequences=True, activation="relu"), input_shape=(X.shape[1], X.shape[2])))
-model.add(Bidirectional(LSTM(200)))
+model.add(Bidirectional(LSTM(256, return_sequences=True, activation="relu"), input_shape=(X.shape[1], X.shape[2])))
+model.add(Bidirectional(LSTM(256)))
 model.add(Dense(y.shape[1], activation='softmax'))
 callbacks = [EarlyStopping(patience=2, monitor='val)loss')]
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=[categorical_accuracy])
@@ -62,11 +62,8 @@ filepath = "epoch-{epoch:02d}-loss-{loss:.4f}.hdf5"
 checkpoint = ModelCheckpoint(filepath, monitor='loss', verbose=1, save_best_only=True, mode='min')
 callbacks_list = [checkpoint]
 
-# model.fit(X, y, epochs=50, batch_size=64, callbacks=callbacks_list)
-
-# callbacks = [EarlyStopping(patience=4, monitor='val_loss'), ModelCheckpoint(filepath, monitor='loss', verbose=1, save_best_only=True, mode='min')]
-
 # fit the model
-model.fit(X, y, batch_size=64, shuffle=True, epochs=1, callbacks=callbacks_list, validation_split=0.1)
+# Batch_size --> this is a number that is more than or equal to one and less than or equal to the number of samples int he training data set
+model.fit(X, y, batch_size=64, shuffle=True, epochs=20, callbacks=callbacks_list, validation_split=0.1)
 
 print("Move on to write.py")
