@@ -27,7 +27,6 @@ print("Total Characters: ", n_chars)
 print("Total Vocab: ", n_vocab)
 
 # prepare the dataset of input to output pairs encoded as integers
-# seqlength = 100
 seqLength = 50
 dataX = []
 dataY = []
@@ -67,8 +66,12 @@ print("Seed:")
 print("\"", ''.join([charDictionaryInt[value] for value in pattern]), "\"")
 
 
-def sample(preds, temperature=0.5):
+# this prevents the AI from causing the story to repeat itself as well as how predictable the text will be
+# the higher the temperature the less predictable the outcome will be --> this means that spelling/grammar errors could be more common
+# the lower the temperature the more predictable the outcome will be
+def sample(preds, temperature=0.2):
 	preds = numpy.asarray(preds).astype('float64')
+	numpy.seterr(divide='ignore')
 	preds = numpy.log(preds) / temperature
 	exp_preds = numpy.exp(preds)
 	preds = exp_preds / numpy.sum(exp_preds)
