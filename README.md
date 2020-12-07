@@ -22,10 +22,10 @@ Make sure that your PyCharm is in Python 3.8 and go to SETTINS (CTRL+ALT+S) and 
  If you don't want to use the same data go to "storyData.txt" delete what we currently have and replace with the data that you want. 
  
  The lines that you can edit within "train.py" are 51, 52, and 65.
-   Line 27 --> the sequence length
-   Line 51 --> relates to the size of the rnn
-   Line 52 --> should have the same rnn size
-   Line 65 --> you can change the batch size and/or the epochs size
+  Line 27 --> the sequence length
+  Line 51 --> relates to the size of the rnn
+  Line 52 --> should have the same rnn size
+  Line 65 --> you can change the batch size and/or the epochs size
    
 When everything is changed, you can run some tests.  Please note, that with the current settings it took my computer 4 hours to run one epochs- this code takes a lot of time.  However you can lower some of the numbers (for example rnn) to speed up the process.  Just note that some of the data you will get from those tests will not be as accurate.
 
