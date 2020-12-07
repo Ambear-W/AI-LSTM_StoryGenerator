@@ -13,8 +13,7 @@ Make sure that your PyCharm is in Python 3.8 and go to SETTINS (CTRL+ALT+S) and 
   4. pillow
   
  These should be all the data you would need to run the code within PyCharm.
-   NOTE: If you run into problems with downloading any of this components, PyCharm should be able to tell you.  You can also change you Python version here depending on if you  
-         have it installed on your computer.
+   - NOTE: If you run into problems with downloading any of this components, PyCharm should be able to tell you.  You can also change you Python version here depending on if you have it installed on your computer.
   
  Now, go to the train.py within PyCharm.  Here is where we train our data.  If you want to use our data that is fine!  It was all open source found at: 
    https://www.gutenberg.org/
