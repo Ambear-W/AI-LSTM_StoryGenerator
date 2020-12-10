@@ -30,10 +30,14 @@ Make sure that your PyCharm is in Python 3.8 and go to SETTINS (CTRL+ALT+S) and 
   
    - Line 65 --> you can change the batch size and/or the epochs size
    
-   
-   
-When everything is changed, you can run some tests.  Please note, that with the current settings it took my computer 4 hours to run one epochs- this code takes a lot of time.  However you can lower some of the numbers (for example rnn) to speed up the process.  Just note that some of the data you will get from those tests will not be as accurate.
+When everything is changed, you can run some tests by right clicking and clicking "run".  Please note, that with the current settings it took my computer 4 hours to run one epochs- this code takes a lot of time. And depending one your settings you might have to change other settings to keep a good test going.   You can lower some of the numbers (for example rnn) to speed up the process.  Just note that some of the data you will get from those tests will not be as accurate.
+
+I recommend coming back and checking on the test.  Sometimes you might run into an error where the loss becomes: nan and the accuracy is exteremely low.  These tests are awful and won't produce well written stores.  I recommend to stop your tests and then change up a few settings.
+
+Don't be discourage if you do run into these problems though!  It takes a bit to understand what your data wants from you and only testing can get you to the correct place!
 
 While this is running it will be saving files, its a good idea to keep track of which one holds both the best loss and accurancy while the code runs and pick that one for when we move onto the write file.
+
+The only changes you have to make here are the changes you made to your LSTM model, how long of a story you want it to print out, and the data file you want it to use.  This file is what your computer saves after every test and it's a good idea to use the lowest loss for the writing portion.
 
 
