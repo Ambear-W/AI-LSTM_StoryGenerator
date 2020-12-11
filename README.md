@@ -1,4 +1,5 @@
 # AI-LSTM_StoryGenerator
+
 A research project for my Artificial Intelligence class from Fall 2020.  Here, we looked more into how Long Short Term Memory can be used to enhance text generation by implementing a multi-lay bidirectional LSTM.
 
 I used Jason Brownlee's and David Campion's tutoritals for this project by combing the two's work.  I recommend checking out their tutorials as well to get a better understanding of their indivual projects since they implemted theirs differently.  These links will be cited at the bottom.
@@ -20,35 +21,46 @@ Make sure that your PyCharm is in Python 3.8 and go to SETTINS (CTRL+ALT+S) and 
  Now, go to the train.py within PyCharm.  Here is where we train our data.  If you want to use our data that is fine!  It was all open source found at: 
    https://www.gutenberg.org/
    
- If you don't want to use the same data go to "storyData.txt" delete what we currently have and replace with the data that you want. 
+ If you don't want to use the same data, go to "storyData.txt" delete what we currently have and replace with the data that you want. You can use just about any text to generate your own story.  The AI does need data to run!
  
+ To personalize this AI you can change some the data on certain lines.
  The lines that you can edit within "train.py" are 27, 51, 52, and 65.
  
-   - Line 27 --> the sequence length
+   - Line 28 --> the sequence length: 
+     ```
+     seqLength = 50
+     ```
   
-   - Line 51 --> relates to the size of the rnn
+   - Line 51 --> relates to the size of the rnn that will be in you LSTM (this is the 256):
+     ```
+     model.add(Bidirectional(LSTM(256, return_sequences=True, activation-"relu"), input_shape=(X.shpe[1], X.shape[2])))
+     ```
   
-   - Line 52 --> should have the same rnn size
+   - Line 52 --> should have the same rnn size this should have the same number in 51, this relates to how many rnn will be in you LSTM:
+     ```
+     model.add(Bidirectional(LSTM(256)))
+     ```
   
-   - Line 65 --> you can change the batch size and/or the epochs size
+   - Line 65 --> you can change the batch size and/or the epochs size, batch size looks at certain sequences of text while epochs runs those batch sizes:
+     ```
+     model.fit(X,y, batch_size=64, shuffle=True, epochs=30, callbacks=callbacks_list, validation_split=0.1
+     ```
    
 When everything is changed, you can run some tests by right clicking and clicking "run".  Please note, that with the current settings it took my computer 4 hours to run one epochs- this code takes a lot of time. And depending one your settings you might have to change other settings to keep a good test going.   You can lower some of the numbers (for example rnn) to speed up the process.  Just note that some of the data you will get from those tests will not be as accurate.
 
-I recommend coming back and checking on the test.  Sometimes you might run into an error where the loss becomes: nan and the accuracy is exteremely low.  These tests are awful and won't produce well written stores.  I recommend to stop your tests and then change up a few settings.
-
-Don't be discourage if you do run into these problems though!  It takes a bit to understand what your data wants from you and only testing can get you to the correct place!
+I recommend coming back and checking on the test.  Sometimes you might run into an error where the loss becomes: nan and the accuracy is exteremely low.  These tests are awful and won't produce well written stores.  I recommend to stop your tests and then change up a few settings.  Don't be discourage if you do run into these problems though!  It takes a bit to understand what your data wants from you and only testing can get you to the correct place!
 
 While this is running it will be saving files, its a good idea to keep track of which one holds both the best loss and accurancy while the code runs and pick that one for when we move onto the write file.
 
 The only changes you have to make here are the changes you made to your LSTM model, how long of a story you want it to print out, and the data file you want it to use.  This file is what your computer saves after every test and it's a good idea to use the lowest loss for the writing portion.
 
-CODING RESOURSES:
+**CODING RESOURSES:**
 
 Brownlee, J., 2020. Text Generation With LSTM Recurrent Neural Networks In Python With Keras. [online] Machine Learning Mastery. Available at: https://machinelearningmastery.com/text-generation-lstm-recurrent-neural-networks-python-keras/ [Accessed 11 December 2020].
 
 Campion, D., 2018. Text Generation Using Bidirectional LSTM And Doc2vec Models 1/3. [online] Medium. Available at: https://medium.com/@david.campion/text-generation-using-bidirectional-lstm-and-doc2vec-models-1-3-8979eb65cb3a [Accessed 11 December 2020].
 
-DATA RESOURCES:
+**DATA RESOURCES:**
 
 Alger Jr, H., 2006. Ragged Dick;, By Horatio Alger Jr.. [online] Gutenberg.org. Available at: <https://www.gutenberg.org/files/5348/5348-h/5348-h.htm> [Accessed 11 December 2020].
 
