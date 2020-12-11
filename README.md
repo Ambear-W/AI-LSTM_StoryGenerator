@@ -86,9 +86,37 @@ Move on to write.py
 
 # Write you story!
 
-**If you made any changes in the train.py file you might have to change a few things in the write.py file as well**
-
 The only changes you have to make here are the changes you made to your LSTM model, how long of a story you want it to print out, and the data file you want it to use.  This file is what your computer saves after every test and it's a good idea to use the lowest loss for the writing portion.
+
+**If you made any changes in the train.py file you might have to change a few things in the write.py file as well**
+You can also change a few things up in the write.py file to change your own output:
+
+   - line 26 this seqLength **must** match the line 28 in train.py
+     ```
+     seqLength = 50
+     ```
+   - line 49 the RNN size **must** match the line 51 in train.py
+     ```
+     model.add(Bidirectional(LSTM(256, return_sequences=True, activation-"relu"), input_shape=(X.shpe[1], X.shape[2])))
+     ```
+   - line 50 the RNN size **must** match the line 52 in train.py
+     ```
+     model.add(Bidirectional(LSTM(256)))
+     ```
+   - line 55 this file **must** match the file **YOU** want to use for your story generation
+     ```
+     filename = "epoch-16-loss-1.2612.hdf5"
+     ```
+   - line 69 temperature can be changed based off of how random you want your story to be
+     ```
+     def sample(preds, temperature=0.25
+     ```
+   - line 80 the 1000 can be changed to how long you want your story to be
+     ```
+     for i in range(1000)
+     ```
+
+Keep playing around with all the settings and all the data files you have and see what kind of stories you can output!
 
 # Recourses
 ### CODING RESOURSES:
