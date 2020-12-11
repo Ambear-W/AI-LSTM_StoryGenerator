@@ -1,5 +1,7 @@
 # AI-LSTM_StoryGenerator
 A research project for my Artificial Intelligence class from Fall 2020.  Here, we looked more into how Long Short Term Memory can be used to enhance text generation by implementing a multi-lay bidirectional LSTM.
+
+I used Jason Brownlee's and David Campion's tutoritals for this project by combing the two's work.  I recommend checking out their tutorials as well to get a better understanding of their indivual projects since they implemted theirs differently.  These links will be cited at the bottom.
  
 The tools I used when making this AI was PyCharm, Python 3.8, and Tensorflow.
  
@@ -40,4 +42,20 @@ While this is running it will be saving files, its a good idea to keep track of 
 
 The only changes you have to make here are the changes you made to your LSTM model, how long of a story you want it to print out, and the data file you want it to use.  This file is what your computer saves after every test and it's a good idea to use the lowest loss for the writing portion.
 
+CODING RESOURSES:
+Brownlee, J., 2020. Text Generation With LSTM Recurrent Neural Networks In Python With Keras. [online] Machine Learning Mastery. Available at: https://machinelearningmastery.com/text-generation-lstm-recurrent-neural-networks-python-keras/ [Accessed 11 December 2020].
 
+Campion, D., 2018. Text Generation Using Bidirectional LSTM And Doc2vec Models 1/3. [online] Medium. Available at: https://medium.com/@david.campion/text-generation-using-bidirectional-lstm-and-doc2vec-models-1-3-8979eb65cb3a [Accessed 11 December 2020].
+
+DATA RESOURCES:
+Alger Jr, H., 2006. Ragged Dick;, By Horatio Alger Jr.. [online] Gutenberg.org. Available at: <https://www.gutenberg.org/files/5348/5348-h/5348-h.htm> [Accessed 11 December 2020].
+
+Ballantyne, R., 2007. The Coral Island, By R.M. Ballantyne. [online] Gutenberg.org. Available at: <https://www.gutenberg.org/files/21721/21721-h/21721-h.htm> [Accessed 11 December 2020].
+
+Ballantyne, R., 2007. The Coral Island. [online] Gutenberg.org. Available at: <https://www.gutenberg.org/files/646/646-h/646-h.htm> [Accessed 11 December 2020].
+
+Nesbit, E., 2016. The Story Of The Amulet, By E. Nesbit. [online] Gutenberg.org. Available at: <https://www.gutenberg.org/files/837/837-h/837-h.htm> [Accessed 11 December 2020].
+
+Nesbit, E., 2016. The Story Of The Treasure Seekers, By E. Nesbit. [online] Gutenberg.org. Available at: <https://www.gutenberg.org/files/770/770-h/770-h.htm> [Accessed 11 December 2020].
+
+Nesbit, E., 2018. The Railway Children, By E. Nesbit. [online] Gutenberg.org. Available at: <https://www.gutenberg.org/files/1874/1874-h/1874-h.htm> [Accessed 11 December 2020].
