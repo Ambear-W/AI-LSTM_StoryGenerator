@@ -8,6 +8,43 @@ The tools I used when making this AI was PyCharm, Python 3.8, and Tensorflow.
  
 Since I only used PyCharm for this research project I will explain how to run it within the PyCharm enviroment - however, this **might be different for you** if you plan to run it on your local machine or in a different enviroment.
 
+# Example outputs
+
+```
+temp = 0.35
+
+Seed:
+"  i was lucky enough to invent a machine, which has "
+2020-12-06 11:16:38.779035: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:116] None of the MLIR optimization passes are enabled (registered 2)
+
+tily of the strange and stones.
+
+now, and the train is the charm in the steps, and the stone of the proper of the cank of a shought of the roar which had been a little and tried to be an engine-dase of the 
+stranger, and the boys that had been a little and tree.  the boys bross the shore of the boat and first prepared to the train to a short pair of the train.  the train came back 
+to the train to the stock of the street. the brighter was so his face of the strange and stoned to the rest of the trains.  i am exarded that the boys was a little can in the 
+boat and pretty and stone and the store of the books and path stroked the strange of the strange of the trains.
+
+‘i think it is the bank of the strange trains,’ said anthea.
+
+‘yes, it’s all the recond water of the trairs,’ that the door was as the part of the tunnel, and the train and the strange of the bank of the strange trees that the servant was 
+a black pain of the street of the street, and it was a stone stroned the rest of the sunsh
+```
+
+```
+temp - 0.2
+
+Seed:
+" ng, because i have read books myself, and i know h "
+2020-12-06 11:02:58.767334: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:116] None of the MLIR optimization passes are enabled (registered 2)
+
+ow and the stone of the strange and stone to the boat with a stranger, and the strange of the part of the children had not tried to be an engine-dase that the bottom of the 
+street of the strange of the cank and strange of the strange of the strange and the street of the street of the strange breath of the strange and the strange of the strange 
+trains of the hand, and the children had been a little of the strange and stone and tried to the strange of the street, and the train and the strange of the train and the 
+children that it was a little of the street of the front of the strange travis and pretty and stroned, and the children had been all the strange travis that the strange was a 
+little of the train and the children stood to the strange of the boat to the bottom of the train to the strange of the boat to the strange of the brass and the train to the 
+strange and the princess of the princess of the sunnel of the train and the strange of the coat and the strange of the strange of the s
+```
+
 # Set Up
 
 First, go ahead and download this GitHub, you should get all the information, from the code we used to some of our testing data.  Unzip this file and open the file in PyCharm.
