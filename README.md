@@ -27,6 +27,8 @@ Make sure that your PyCharm is in Python 3.8 and go to SETTINS (CTRL+ALT+S) and 
  
  # Trainning Settings
  
+ You can skip this step if you plan to use the data that I have already made.  You will have to go into the epoch20Testing file and drag out the "epoch-16-loss-1.2612.hdf5" into the overal file to get the write.py to work correctly.  Feel free to play around with any other tests that I have.
+ 
  To personalize this AI you can change some the data on certain lines.
  The lines that you can edit within "train.py" are 27, 51, 52, and 65.  
  
