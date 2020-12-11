@@ -43,7 +43,7 @@ While this is running it will be saving files, its a good idea to keep track of 
 The only changes you have to make here are the changes you made to your LSTM model, how long of a story you want it to print out, and the data file you want it to use.  This file is what your computer saves after every test and it's a good idea to use the lowest loss for the writing portion.
 
 CODING RESOURSES:
-Brownlee, J., 2020. Text Generation With LSTM Recurrent Neural Networks In Python With Keras. [online] Machine Learning Mastery. Available at: https://machinelearningmastery.com/text-generation-lstm-recurrent-neural-networks-python-keras/ [Accessed 11 December 2020].
+\nBrownlee, J., 2020. Text Generation With LSTM Recurrent Neural Networks In Python With Keras. [online] Machine Learning Mastery. Available at: https://machinelearningmastery.com/text-generation-lstm-recurrent-neural-networks-python-keras/ [Accessed 11 December 2020].
 
 Campion, D., 2018. Text Generation Using Bidirectional LSTM And Doc2vec Models 1/3. [online] Medium. Available at: https://medium.com/@david.campion/text-generation-using-bidirectional-lstm-and-doc2vec-models-1-3-8979eb65cb3a [Accessed 11 December 2020].
 
