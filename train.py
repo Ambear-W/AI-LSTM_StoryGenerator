@@ -65,3 +65,14 @@ callbacks_list = [checkpoint]
 model.fit(X, y, batch_size=64, shuffle=True, epochs=30, callbacks=callbacks_list, validation_split=0.1)
 
 print("Move on to write.py")
+
+
+# Brownlee, J., 2020. Text Generation With LSTM Recurrent Neural Networks In Python With Keras.
+# [online] Machine Learning Mastery.
+# Available at: https://machinelearningmastery.com/text-generation-lstm-recurrent-neural-networks-python-keras/
+# [Accessed 11 December 2020].
+
+# Campion, D., 2018. Text Generation Using Bidirectional LSTM And Doc2vec Models 1/3.
+# [online] Medium.
+# Available at: https://medium.com/@david.campion/text-generation-using-bidirectional-lstm-and-doc2vec-models-1-3-8979eb65cb3a
+# [Accessed 11 December 2020].

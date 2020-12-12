@@ -90,3 +90,13 @@ for i in range(1000):
 	pattern = pattern[1:len(pattern)]
 
 print("\nDone.")
+
+# Brownlee, J., 2020. Text Generation With LSTM Recurrent Neural Networks In Python With Keras.
+# [online] Machine Learning Mastery.
+# Available at: https://machinelearningmastery.com/text-generation-lstm-recurrent-neural-networks-python-keras/
+# [Accessed 11 December 2020].
+
+# Campion, D., 2018. Text Generation Using Bidirectional LSTM And Doc2vec Models 1/3.
+# [online] Medium.
+# Available at: https://medium.com/@david.campion/text-generation-using-bidirectional-lstm-and-doc2vec-models-1-3-8979eb65cb3a
+# [Accessed 11 December 2020].
