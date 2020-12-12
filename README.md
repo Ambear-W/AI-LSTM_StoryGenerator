@@ -76,12 +76,12 @@ Make sure that your PyCharm is in Python 3.8 and go to SETTINS (CTRL+ALT+S) and 
      seqLength = 50
      ```
   
-   - Line 51 --> relates to the size of the rnn that will be in you LSTM (this is the 256):
+   - Line 51 --> relates to the how many hidden layers that will be in you LSTM (this is the 256):
      ```
      model.add(Bidirectional(LSTM(256, return_sequences=True, activation-"relu"), input_shape=(X.shpe[1], X.shape[2])))
      ```
   
-   - Line 52 --> should have the same rnn size this should have the same number in 51, this relates to how many rnn will be in you LSTM:
+   - Line 52 --> should have the same hidden layers this should have the same number in 51, this relates to how many rnn will be in you LSTM:
      ```
      model.add(Bidirectional(LSTM(256)))
      ```
